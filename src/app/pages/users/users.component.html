@@ -1,0 +1,26 @@
+<p> User Component WORKS!!!!</p>
+
+<button (click)="onToggle()">Toggle</button>
+
+<p *ngIf="isShow; else template" class="content">In this field we are showing some content</p>
+
+
+<ng-template #template>No More Info</ng-template>
+
+<!-- <div>
+    <ul>
+        <li *ngFor="let item of customers; let i = index; trackBy: trackById">   {{ item.name }} {{ item.age }} age</li>
+    </ul>
+</div> -->
+
+<button  (click)="onChangeVintage()">Change currentObject to vintage</button>
+<button (click)="onChangeBright()">Change currentObject to bright</button>
+
+<div [ngSwitch]="currentItem.feature">
+    <div *ngSwitchCase="'stout'">stout content is rendered</div>
+    <div *ngSwitchCase="'slim'">slim content is rendered</div>
+    <div *ngSwitchCase="'vintage'">vintage  content is rendered</div>
+    <div *ngSwitchCase="'bright'">bright content is rendered</div>
+    <div *ngSwitchDefault>I am Default Feature</div>
+</div>
+
